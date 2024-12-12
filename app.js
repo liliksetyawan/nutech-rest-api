@@ -23,4 +23,8 @@ app.use("/", serviceRoutes);
 app.use("/", transactionRoutes);
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const dbbost = process.env.DB_HOST
+const dbport = process.env.DB_PORT
+const dbname = process.env.DB_NAME
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT} ${dbbost} ${dbport} ${dbname}`));
